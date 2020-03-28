@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Project2.Models.TBL_CONSULTANT>
+
+@{
+    ViewBag.Title = "Consultants";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <p>
+        <h2>Consultants</h2>
+        @Html.ActionLink("Add Consultant", "Add_Consultants", "", htmlAttributes: new { @class = "btn btn-success", style = "margin-left:700px" })
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CON_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CON_FEE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DESG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TBL_R_DEPT.DEPT_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CON_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CON_FEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DESG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TBL_R_DEPT.DEPT_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit_Consultants", new { id = item.CON_JOB_ID }, htmlAttributes: new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Delete", "Delete_Consultants", new { id = item.CON_JOB_ID }, htmlAttributes: new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

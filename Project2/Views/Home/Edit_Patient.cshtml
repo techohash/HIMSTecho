@@ -1,0 +1,140 @@
+﻿@model Project2.Models.TBL_R_RECEIPT
+
+@{
+ViewBag.Title = "Edit_Patient";
+Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<head>
+    <link href="~/CSS/Custon-Cs.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="LoginFormLayout">
+        <div class="row">
+            @using (Html.BeginForm("Edit_Patient", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                
+                <div class="form-horizontal">
+                    <div class="col-md-6">
+                        <div id="Patient_info">
+                            <h2>Patient Information</h2>
+                            <hr />
+                            @Html.HiddenFor(model => model.R_ID)
+                            @Html.HiddenFor(model => model.TBL_R_PATIENT.MR_NO)
+                            <div class="form-group">
+                                @Html.Label("AGE: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.AGE, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.AGE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.FIRST_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.FIRST_NAME, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Address: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.ADDRESS1, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.ADDRESS1, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.Label("Ph#: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.TEL_NO, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.TEL_NO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Gender: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <label class="radio-inline">
+                                        @Html.RadioButtonFor(model => model.TBL_R_PATIENT.GENDER, "Male", new { @name = "gender" })
+                                        Male
+                                    </label>
+                                    <label class="radio-inline">
+                                        @Html.RadioButtonFor(model => model.TBL_R_PATIENT.GENDER, "Female", new { @name = "gender" })
+                                        Female
+                                    </label>
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.GENDER, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.Label("Father Name: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.F_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.F_NAME, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("CNIC: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.CNIC_NO, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.CNIC_NO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("DOB: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_R_PATIENT.DATEOFBIRTH, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_R_PATIENT.DATEOFBIRTH, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div id="Fee_info">
+                            <h2>Fee Information</h2>
+                            <hr />
+                            <div class="form-group">
+                                @Html.Label("Department: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.DEPT_ID, ViewBag.departments as SelectList, "..Select Departments..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.DEPT_ID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Consultant: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.CONSULTANT_ID, ViewBag.consultants as SelectList, "..Select Consultants..", new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.CONSULTANT_ID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Fee: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.TBL_CONSULTANT.CON_FEE, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.TBL_CONSULTANT.CON_FEE, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-success" style="margin-left:80px" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>

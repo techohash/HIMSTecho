@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7859e4d86e84fd3bd64f4aae7ed0f5b" Name="Diagram1">
+        <EntityTypeShape EntityType="PathologyModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_CONSULTANT" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_R_CAT" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_R_DEPT" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_R_PATIENT" Width="1.5" PointX="3.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_R_RECEIPT" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_R_TEST" Width="1.5" PointX="11" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_USER_D" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PathologyModel.View_Visit" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="PathologyModel.FK_TBL_CONSULTANT_TBL_R_DEPT" ManuallyRouted="false" />
+        <AssociationConnector Association="PathologyModel.FK_TBL_R_RECEIPT_TBL_R_DEPT" ManuallyRouted="false" />
+        <AssociationConnector Association="PathologyModel.FK_TBL_R_RECEIPT_TBL_R_PATIENT" ManuallyRouted="false" />
+        <AssociationConnector Association="PathologyModel.FK_TBL_R_TEST_TBL_USER_D" ManuallyRouted="false" />
+        <AssociationConnector Association="PathologyModel.FK_TBL_R_RECEIPT_TBL_CONSULTANT" />
+        <EntityTypeShape EntityType="PathologyModel.TBL_ORGINATION" Width="1.5" PointX="0.75" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

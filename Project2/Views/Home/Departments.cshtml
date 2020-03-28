@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Project2.Models.TBL_R_DEPT>
+
+@{
+    ViewBag.Title = "Departments";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <p>
+        <h2>Departments</h2>
+        @Html.ActionLink("Add Department", "Add_Departments", "", htmlAttributes: new { @class = "btn btn-success", style="margin-left:700px"})
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PRY)
+        </th>
+        <th>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PRY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit_Departments", new { id=item.DEPT_ID },htmlAttributes: new { @class="btn btn-primary"}) |
+            @Html.ActionLink("Delete", "Delete_Departments", new { id=item.DEPT_ID },htmlAttributes: new { @class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>

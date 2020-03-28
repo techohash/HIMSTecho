@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Project2.Models.TBL_USER_D>
+
+@{
+    ViewBag.Title = "AdminDashboard";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Admin</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USER_PASSWORD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEP_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CMP_CODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MAG_ACT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_ACTIVE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USER_PASSWORD)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEP_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CMP_CODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAG_ACT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_ACTIVE)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.USER_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.USER_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.USER_ID })
+        </td>*@
+    </tr>
+}
+
+</table>

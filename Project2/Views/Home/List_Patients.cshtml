@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Project2.Models.TBL_R_RECEIPT>
+
+@{
+    ViewBag.Title = "List_Patients";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+    <p>
+        <h2>List Of Patients</h2>
+        @using (Html.BeginForm("List_Patients", "Home", FormMethod.Post))
+        {
+            <div>
+                @Html.Label("Search", new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBox("searchTxt", null, new { @class = "form-control", @placeholder = "Search Your Text", @style = "max-width:100%" })
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </div>
+            </div>
+        }
+            @Html.ActionLink("Add New Patient", "Patient_Visit", "", htmlAttributes: new { @class = "btn btn-success", style = "margin-left:700px" })
+        
+        </p>
+
+    <table class="table">
+     
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TBL_R_PATIENT.MR_NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TBL_R_PATIENT.AGE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TBL_R_PATIENT.FIRST_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TBL_R_PATIENT.ADDRESS1)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TBL_R_PATIENT.GENDER)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.TBL_R_PATIENT.TEL_NO)
+            </th>
+
+            <th></th>
+        </tr>
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TBL_R_PATIENT.MR_NO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TBL_R_PATIENT.AGE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TBL_R_PATIENT.FIRST_NAME)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TBL_R_PATIENT.ADDRESS1)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TBL_R_PATIENT.GENDER)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.TBL_R_PATIENT.TEL_NO)
+                </td>
+
+                <td>
+                    @Html.ActionLink("New Reciept", "Edit_Patient", new { id = item.R_ID }, htmlAttributes: new { @class = "btn btn-primary" }) |
+                </td>
+            </tr>
+        }
+
+    </table>

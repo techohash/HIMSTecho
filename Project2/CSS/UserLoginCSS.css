@@ -1,0 +1,66 @@
+﻿body {
+    background-color: #f7f7f7;
+}
+
+.LoginFormLayout {
+    background-color: #fff;
+    padding: 40px 40px;
+    margin-top: 20px;
+}
+
+    .LoginFormLayout #LoginForm {
+        padding-top: 0px;
+        padding-right: 20px;
+    }
+
+        .LoginFormLayout #LoginForm h3 {
+            padding-left: 15px;
+            margin: 0px;
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+#TextBox {
+    background:none;
+    border-top: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    border-left: none;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: inherit;
+}
+
+#icon {
+    border: none;
+    border-radius: 999px;
+    padding: 10px;
+}
+
+#btn_back {
+    background-color: red;
+    border-radius: 50px;
+    height: 40px;
+    width: 100px;
+}
+
+    #btn_back:hover {
+        background-color: #192a56;
+    }
+
+#btn_login {
+    background-color: lightseagreen;
+    border-radius: 50px;
+    height: 40px;
+    width: 100px;
+}
+
+    #btn_login:hover {
+        background-color: #192a56;
+    }
+
+.LoginFormLayout #Loginimage {
+    border-right: 3px solid #ddd;
+}
